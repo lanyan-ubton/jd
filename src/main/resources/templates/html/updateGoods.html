@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="<%=basePath%>">
+    <title>商品修改</title>
+    <meta http-equiv="cache-control" content="no-cache">
+</head>
+<body>
+    <h1>商品修改</h1>
+        <form:form modelAttribute="goods" method="post" action="seller/updateGoods" enctype="multipart/form-data">
+            <p>ID: ${goods.id}</p>
+            <p>Name: <form:input path="name"  /></p>
+            <p>Price: <form:input path="price"  /></p>
+            <p>Count: <form:input path="count" /></p>
+            <p>Description: <form:textarea path="description" readonly="true" /></p>
+            <c:if test="${not empty goods.picture}">
+                <p>Picture:</p>
+				<img src="data:image/jpeg;base64,${image}" width="100px" height="100px" alt="Goods Picture"/>
+            </c:if>
+            <td><input type="file" name="newImage" /></td>
+            <td><input type="submit" value="提交" /></td>
+            <form:input type="hidden" path="id" value="${goods.id}" />
+            <form:input type="hidden" path="sellerName" value="${goods.sellerName}" />
+        </form:form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: jd
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    enabled: true
+    mode: LEGACYHTML5
+    prefix: classpath:/templates/html/
+    servlet:
+      content-type: text/html
+    suffix: .html
+
